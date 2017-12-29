@@ -1,0 +1,12 @@
+1uwsgi遇到ImportError: No module named django.core.wsgi问题
+   通过在wsgi.py里面打印sys.path发现是因为path里面并没有包含该安装的site-packages的路径，因此在wsgi.py添加如下语句
+   [python] view plain copy
+   sys.path.append('/usr/lib/python2.7/site-packages')  
+   sys.path.append('/usr/lib64/python2.7/site-packages')  
+2
+Error: Package: 1:nginx-1.12.2-1.el7_4.ngx.x86_64 (nginx)
+           Requires: libcrypto.so.10(OPENSSL_1.0.2)(64bit)
+ You could try using --skip-broken to work around the problem
+ You could try running: rpm -Va --nofiles --nodigest
+ 
+[Answer]yum install nginx-1.12.1
